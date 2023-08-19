@@ -42,6 +42,13 @@
             font-size: 24px;
             margin-top: 20px;
         }
+        .card {
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -58,7 +65,7 @@
 
     <div id="gamePage">
         <button id="drawCardButton">Draw Card</button>
-        <p id="drinkInstruction"></p>
+        <div id="drinkInstruction" class="card"></div>
     </div>
 
     <script>
