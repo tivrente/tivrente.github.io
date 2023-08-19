@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <head>
     <title>Piccolo Drinkgame</title>
@@ -79,6 +79,22 @@
             // Voeg meer kaarten toe hier
         ];
 
+        const startButton = document.getElementById("startButton");
+        const nameInput = document.getElementById("nameInput");
+        const playerNameInput = document.getElementById("playerName");
+        const addPlayerButton = document.getElementById("addPlayerButton");
+        const startGameButton = document.getElementById("startGameButton");
+        const playerList = document.getElementById("playerList");
+        const gamePage = document.getElementById("gamePage");
+        const drawCardButton = document.getElementById("drawCardButton");
+        const drinkInstruction = document.getElementById("drinkInstruction");
+
+        let players = [];
+
+        startButton.addEventListener("click", showNameInput);
+        addPlayerButton.addEventListener("click", addPlayer);
+        startGameButton.addEventListener("click", startGame);
+
         let cardIndex = 0;
         let isShowingCard = false;
 
@@ -90,7 +106,6 @@
                 if (cardIndex >= cards.length) {
                     cardIndex = 0;
                 }
-                const drinkInstruction = document.getElementById("drinkInstruction");
                 const randomPlayer = players[Math.floor(Math.random() * players.length)];
                 const formattedCard = cards[cardIndex].replace(/xxx/g, randomPlayer);
                 drinkInstruction.textContent = formattedCard;
@@ -109,6 +124,32 @@
                 color += letters[Math.floor(Math.random() * 16)];
             }
             return color;
+        }
+
+        function showNameInput() {
+            startButton.style.display = "none";
+            nameInput.style.display = "block";
+        }
+
+        function updatePlayerList() {
+            const playerListContent = players.map(player => `<p>${player}</p>`).join("");
+            playerList.innerHTML = playerListContent;
+        }
+
+        function addPlayer() {
+            const playerName = playerNameInput.value;
+            if (playerName) {
+                players.push(playerName);
+                playerNameInput.value = "";
+                updatePlayerList();
+            }
+        }
+
+        function startGame() {
+            if (players.length > 0) {
+                nameInput.style.display = "none";
+                gamePage.style.display = "block";
+            }
         }
     </script>
 </body>
