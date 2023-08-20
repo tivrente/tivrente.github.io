@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <title>Piccolo Drinkgame</title>
@@ -16,7 +17,7 @@
             z-index: 9999;
             transform: scale(1.1); /* Inzoomen */
             margin-top: -20px; /* Verschuiven naar boven */
-            margin-left: -15px; /* Verschuiven naar links */
+            margin-left: -20px; /* Verschuiven naar links */
         }
         body {
             font-family: Arial, sans-serif;
@@ -223,3 +224,4 @@
     </script>
 </body>
 </html>
+
