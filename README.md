@@ -51,6 +51,19 @@
             border-radius: 10px;
             font-size: 18px;
         }
+        .playerNameContainer {
+            margin-top: 10px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+        .playerName {
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
@@ -63,6 +76,7 @@
         <button id="addPlayerButton">Add Player</button>
         <button id="startGameButton">Start Game</button>
         <div id="playerList"></div>
+        <div id="enteredPlayers"></div>
     </div>
 
     <div id="gamePage">
@@ -85,6 +99,7 @@
         const addPlayerButton = document.getElementById("addPlayerButton");
         const startGameButton = document.getElementById("startGameButton");
         const playerList = document.getElementById("playerList");
+        const enteredPlayers = document.getElementById("enteredPlayers");
         const gamePage = document.getElementById("gamePage");
         const drawCardButton = document.getElementById("drawCardButton");
         const drinkInstruction = document.getElementById("drinkInstruction");
@@ -136,12 +151,18 @@
             playerList.innerHTML = playerListContent;
         }
 
+        function updateEnteredPlayers() {
+            const enteredPlayersContent = players.map(player => `<div class="playerName">${player}</div>`).join("");
+            enteredPlayers.innerHTML = enteredPlayersContent;
+        }
+
         function addPlayer() {
             const playerName = playerNameInput.value;
             if (playerName) {
                 players.push(playerName);
                 playerNameInput.value = "";
                 updatePlayerList();
+                updateEnteredPlayers();
             }
         }
 
