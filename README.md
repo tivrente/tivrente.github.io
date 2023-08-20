@@ -14,12 +14,10 @@
             justify-content: center;
             align-items: center;
             background-color: #ecf0f1;
-            margin: 0; 
             z-index: 9999;
-transform: scale(1.1); /* Inzoomen */
-    margin-top: -20px; /* Verschuiven naar boven */
-    margin-left: -20px; /* Verschuiven naar links */
-}
+            transform: scale(1.1); /* Inzoomen */
+            margin-top: -20px; /* Verschuiven naar boven */
+            margin-left: -20px; /* Verschuiven naar links */
         }
         body {
             font-family: Arial, sans-serif;
@@ -62,8 +60,10 @@ transform: scale(1.1); /* Inzoomen */
             padding: 20px;
             transition: background-color 0.3s;
         }
+        /* Pas de achtergrondkleur aan voor voldoende contrast met zwarte tekst */
         .card {
-            background-color: #ecf0f1;
+            background-color: #34495e;
+            color: #fff;
             padding: 20px;
             margin: 10px;
             border-radius: 10px;
@@ -102,7 +102,9 @@ transform: scale(1.1); /* Inzoomen */
 
     <div id="gamePage" style="display: none;">
         <!-- Voeg de kaartcontainer met volledig scherm toe -->
-        <div id="drinkInstruction" class="fullscreen card"></div>
+        <div id="drinkInstruction" class="fullscreen card">
+            <button id="backButton" style="position: absolute; top: 10px; left: 10px; display: none;">Back</button>
+        </div>
     </div>
 
     <script>
@@ -182,19 +184,45 @@ transform: scale(1.1); /* Inzoomen */
         }
 
         function toggleFullScreen() {
+            const element = document.documentElement;
             if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen().catch(err => {
-                    console.log(`Error attempting to enable full-screen mode: ${err.message}`);
-                });
+                if (element.requestFullscreen) {
+                    element.requestFullscreen();
+                } else if (element.webkitRequestFullscreen) { // Voor Apple
+                    element.webkitRequestFullscreen();
+                }
             } else {
                 if (document.exitFullscreen) {
                     document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { // Voor Apple
+                    document.webkitExitFullscreen();
                 }
             }
         }
+
+        // Voeg een eventlistener toe om de "Back" knop te tonen bij het bekijken van de kaarten
+        drinkInstruction.addEventListener("click", function() {
+            document.getElementById("backButton").style.display = "block";
+        });
+
+        // Voeg een eventlistener toe aan de "Back" knop om terug te gaan naar het invoerscherm
+        document.getElementById("backButton").addEventListener("click", function() {
+            document.getElementById("gamePage").style.display = "none";
+            document.getElementById("nameInput").style.display = "block";
+            document.getElementById("backButton").style.display = "none";
+        });
+        
+        // Voeg een eventlistener toe voor het draaien van de gsm
+        window.addEventListener("orientationchange", function() {
+            if (document.fullscreenElement) {
+                // Vernieuw de full-screen modus om de tekst op het scherm te houden na draaien
+                document.exitFullscreen().then(function() {
+                    toggleFullScreen();
+                });
+            }
+        });
     </script>
 </body>
 </html>
-
 
 
