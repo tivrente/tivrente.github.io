@@ -56,13 +56,16 @@
             text-align: left;
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
+            max-width: 300px;
+            margin: auto;
         }
         .playerName {
             background-color: #3498db;
             color: #fff;
             padding: 5px 10px;
             border-radius: 5px;
-            margin-right: 5px;
+            margin: 5px;
         }
     </style>
 </head>
@@ -75,6 +78,7 @@
         <input type="text" id="playerName" placeholder="Player Name">
         <button id="addPlayerButton">Add Player</button>
         <button id="startGameButton">Start Game</button>
+        <div class="playerNameContainer" id="enteredPlayers"></div>
     </div>
 
     <div id="gamePage">
@@ -99,6 +103,7 @@
         const gamePage = document.getElementById("gamePage");
         const drawCardButton = document.getElementById("drawCardButton");
         const drinkInstruction = document.getElementById("drinkInstruction");
+        const enteredPlayers = document.getElementById("enteredPlayers");
 
         let players = [];
 
@@ -159,8 +164,7 @@
         }
 
         function updateEnteredPlayers() {
-            const enteredPlayersContent = players.map(player => `<div class="playerName">${player}</div>`).join("");
-            playerNameInput.insertAdjacentHTML('afterend', `<div class="playerNameContainer">${enteredPlayersContent}</div>`);
+            enteredPlayers.innerHTML = players.map(player => `<div class="playerName">${player}</div>`).join("");
         }
     </script>
 </body>
