@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <title>Piccolo Drinkgame</title>
@@ -17,7 +16,7 @@
             z-index: 9999;
             transform: scale(1.1); /* Inzoomen */
             margin-top: -20px; /* Verschuiven naar boven */
-            margin-left: -20px; /* Verschuiven naar links */
+            margin-left: -15px; /* Verschuiven naar links */
         }
         body {
             font-family: Arial, sans-serif;
@@ -57,7 +56,7 @@
         #drinkInstruction {
             font-size: 24px;
             margin-top: 20px;
-            padding: 20px;
+            padding: 40px; /* Grotere padding voor afstand tot de rand */
             transition: background-color 0.3s;
         }
         /* Pas de achtergrondkleur aan voor voldoende contrast met zwarte tekst */
@@ -224,5 +223,3 @@
     </script>
 </body>
 </html>
-
-
