@@ -1,8 +1,20 @@
-
 <html>
 <head>
     <title>Piccolo Drinkgame</title>
     <style>
+        /* Voeg de nieuwe CSS-regels voor full screen kaarten toe */
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ecf0f1;
+            z-index: 9999;
+        }
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -82,7 +94,8 @@
     </div>
 
     <div id="gamePage">
-        <div id="drinkInstruction" class="card"></div>
+        <!-- Voeg de kaartcontainer met volledig scherm toe -->
+        <div id="drinkInstruction" class="fullscreen card"></div>
     </div>
 
     <script>
@@ -101,7 +114,6 @@
         const addPlayerButton = document.getElementById("addPlayerButton");
         const startGameButton = document.getElementById("startGameButton");
         const gamePage = document.getElementById("gamePage");
-        const drawCardButton = document.getElementById("drawCardButton");
         const drinkInstruction = document.getElementById("drinkInstruction");
         const enteredPlayers = document.getElementById("enteredPlayers");
 
@@ -114,7 +126,8 @@
         let cardIndex = 0;
         let isShowingCard = false;
 
-        document.addEventListener("click", showNextCard);
+        // Verplaats deze event listener naar de juiste plaats
+        drinkInstruction.addEventListener("click", showNextCard);
 
         function showNextCard() {
             if (!isShowingCard) {
@@ -160,6 +173,7 @@
             if (players.length > 0) {
                 nameInput.style.display = "none";
                 gamePage.style.display = "block";
+                showNextCard(); // Toon de eerste kaart
             }
         }
 
