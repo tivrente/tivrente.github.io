@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <title>Piccolo Drinkgame</title>
@@ -13,7 +14,12 @@
             justify-content: center;
             align-items: center;
             background-color: #ecf0f1;
+            margin: 0; 
             z-index: 9999;
+transform: scale(1.1); /* Inzoomen */
+    margin-top: -20px; /* Verschuiven naar boven */
+    margin-left: -20px; /* Verschuiven naar links */
+}
         }
         body {
             font-family: Arial, sans-serif;
@@ -21,6 +27,7 @@
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            overflow: hidden;
         }
         h1 {
             color: #333;
@@ -38,7 +45,6 @@
             background-color: #2980b9;
         }
         #nameInput, #gamePage {
-            display: none;
             padding: 20px;
         }
         input[type="text"] {
@@ -83,7 +89,8 @@
 </head>
 <body>
     <h1>Piccolo Drinkgame</h1>
-    <button id="startButton">Start Game</button>
+    <!-- Voeg de Full Screen knop toe -->
+    <button id="fullscreenButton">Full Screen</button>
 
     <div id="nameInput">
         <h2>Enter Player Names:</h2>
@@ -93,7 +100,7 @@
         <div class="playerNameContainer" id="enteredPlayers"></div>
     </div>
 
-    <div id="gamePage">
+    <div id="gamePage" style="display: none;">
         <!-- Voeg de kaartcontainer met volledig scherm toe -->
         <div id="drinkInstruction" class="fullscreen card"></div>
     </div>
@@ -108,26 +115,24 @@
             // Voeg meer kaarten toe hier
         ];
 
-        const startButton = document.getElementById("startButton");
-        const nameInput = document.getElementById("nameInput");
+        const gamePage = document.getElementById("gamePage");
+        const drinkInstruction = document.getElementById("drinkInstruction");
+        const fullscreenButton = document.getElementById("fullscreenButton");
         const playerNameInput = document.getElementById("playerName");
         const addPlayerButton = document.getElementById("addPlayerButton");
         const startGameButton = document.getElementById("startGameButton");
-        const gamePage = document.getElementById("gamePage");
-        const drinkInstruction = document.getElementById("drinkInstruction");
         const enteredPlayers = document.getElementById("enteredPlayers");
 
         let players = [];
 
-        startButton.addEventListener("click", showNameInput);
         addPlayerButton.addEventListener("click", addPlayer);
         startGameButton.addEventListener("click", startGame);
 
         let cardIndex = 0;
         let isShowingCard = false;
 
-        // Verplaats deze event listener naar de juiste plaats
         drinkInstruction.addEventListener("click", showNextCard);
+        fullscreenButton.addEventListener("click", toggleFullScreen);
 
         function showNextCard() {
             if (!isShowingCard) {
@@ -155,11 +160,6 @@
             return color;
         }
 
-        function showNameInput() {
-            startButton.style.display = "none";
-            nameInput.style.display = "block";
-        }
-
         function addPlayer() {
             const playerName = playerNameInput.value;
             if (playerName && !players.includes(playerName)) {
@@ -171,7 +171,7 @@
 
         function startGame() {
             if (players.length > 0) {
-                nameInput.style.display = "none";
+                document.getElementById("nameInput").style.display = "none";
                 gamePage.style.display = "block";
                 showNextCard(); // Toon de eerste kaart
             }
@@ -180,6 +180,21 @@
         function updateEnteredPlayers() {
             enteredPlayers.innerHTML = players.map(player => `<div class="playerName">${player}</div>`).join("");
         }
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable full-screen mode: ${err.message}`);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
     </script>
 </body>
 </html>
+
+
+
