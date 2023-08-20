@@ -75,7 +75,6 @@
         <input type="text" id="playerName" placeholder="Player Name">
         <button id="addPlayerButton">Add Player</button>
         <button id="startGameButton">Start Game</button>
-        <div id="playerList"></div>
         <div id="enteredPlayers"></div>
     </div>
 
@@ -98,7 +97,6 @@
         const playerNameInput = document.getElementById("playerName");
         const addPlayerButton = document.getElementById("addPlayerButton");
         const startGameButton = document.getElementById("startGameButton");
-        const playerList = document.getElementById("playerList");
         const enteredPlayers = document.getElementById("enteredPlayers");
         const gamePage = document.getElementById("gamePage");
         const drawCardButton = document.getElementById("drawCardButton");
@@ -146,11 +144,6 @@
             nameInput.style.display = "block";
         }
 
-        function updatePlayerList() {
-            const playerListContent = players.map(player => `<p>${player}</p>`).join("");
-            playerList.innerHTML = playerListContent;
-        }
-
         function updateEnteredPlayers() {
             const enteredPlayersContent = players.map(player => `<div class="playerName">${player}</div>`).join("");
             enteredPlayers.innerHTML = enteredPlayersContent;
@@ -158,10 +151,9 @@
 
         function addPlayer() {
             const playerName = playerNameInput.value;
-            if (playerName) {
+            if (playerName && !players.includes(playerName)) {
                 players.push(playerName);
                 playerNameInput.value = "";
-                updatePlayerList();
                 updateEnteredPlayers();
             }
         }
