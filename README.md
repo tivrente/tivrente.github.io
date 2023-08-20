@@ -75,7 +75,6 @@
         <input type="text" id="playerName" placeholder="Player Name">
         <button id="addPlayerButton">Add Player</button>
         <button id="startGameButton">Start Game</button>
-        <div id="enteredPlayers"></div>
     </div>
 
     <div id="gamePage">
@@ -97,7 +96,6 @@
         const playerNameInput = document.getElementById("playerName");
         const addPlayerButton = document.getElementById("addPlayerButton");
         const startGameButton = document.getElementById("startGameButton");
-        const enteredPlayers = document.getElementById("enteredPlayers");
         const gamePage = document.getElementById("gamePage");
         const drawCardButton = document.getElementById("drawCardButton");
         const drinkInstruction = document.getElementById("drinkInstruction");
@@ -144,11 +142,6 @@
             nameInput.style.display = "block";
         }
 
-        function updateEnteredPlayers() {
-            const enteredPlayersContent = players.map(player => `<div class="playerName">${player}</div>`).join("");
-            enteredPlayers.innerHTML = enteredPlayersContent;
-        }
-
         function addPlayer() {
             const playerName = playerNameInput.value;
             if (playerName && !players.includes(playerName)) {
@@ -163,6 +156,11 @@
                 nameInput.style.display = "none";
                 gamePage.style.display = "block";
             }
+        }
+
+        function updateEnteredPlayers() {
+            const enteredPlayersContent = players.map(player => `<div class="playerName">${player}</div>`).join("");
+            playerNameInput.insertAdjacentHTML('afterend', `<div class="playerNameContainer">${enteredPlayersContent}</div>`);
         }
     </script>
 </body>
