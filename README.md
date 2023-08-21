@@ -109,11 +109,12 @@
 
     <script>
         const cards = [
-            "Drink het aantal slokken van het maandnummer waarin je bent geboren maandnummer",
-            "wat was je laatste aanraking met politie, xxx begint",
-            "wie in deze groep heeft het meeste relaties gehad",
-            "we tellen af en wijzen een random persoon aan, de persoon met het meeste stemmen drinkt zzz slokken.",
-            "123 kijk zo nie, als je in iemand zijn ogen kijkt drink yyy slokken",
+        "xxx takes a sip!",
+        "xxx Pick zzz someone to take yyy sips.",
+        "xxx Take two sips.",
+        "Waterfall! Everyone keeps drinking until the person to their right stops. xxx starts",
+        "Rhyme time! xxx Say a word, and everyone has to say a word that rhymes.",
+            
             // Voeg meer kaarten toe hier
         ];
 
