@@ -235,7 +235,7 @@
         "drink je glas leeg als je meer dan 80 kg weegt",
         "drink 3 slokken als je ooit een fiets hebt gestolen, geef 3 slokken als er ooit een fiets van je is gestolen",
         "voetbal teams, de persoon dei niets weet of in herhaling valt drink 4 slokken",
-        "vanaf nu als je naar het wc moet vraag je het aan de game master met een rijm, bv "ik moet dringend naar de wc, hopelijk is het geen diaree",
+        "vanaf nu als je naar het wc moet vraag je het aan de game master met een rijm, bv :ik moet dringend naar de wc, hopelijk is het geen diaree",
         "de persoon met het minste body hair drink 5 slokken",
         "xxx en xxx at battle, de winnaar krijgt immuniteit voor 15 min",
         "als je ooit cum hebt ingeslikt dirnk 3 keer",
