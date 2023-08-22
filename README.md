@@ -113,6 +113,16 @@
 
     <script>
     let isPageVisible = true;
+
+document.addEventListener("visibilitychange", function() {
+    isPageVisible = !document.hidden;
+    if (isPageVisible) {
+        // De pagina wordt opnieuw geladen wanneer deze weer zichtbaar wordt
+        window.location.reload();
+    }
+});
+
+    let isPageVisible = true;
     document.addEventListener("visibilitychange", function() {
         isPageVisible = !document.hidden;
     });
