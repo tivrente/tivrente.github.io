@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <head>
     <title>Piccolo Drinkgame</title>
@@ -229,7 +229,7 @@
             "als je ooit cum hebt ingeslikt dirnk 3 keer",
             "boys drink yyy keer",
             "girls drink yyy keer",
-            "xxx vind een regel uit"
+            "xxx vind een regel uit",
             "drink 2 keer als je 2de teen groter is dan je grote teen",
             "xxx als je ooit bent in elkaar geslaan drink yyy keer",
             "dehene die de vorige moest drinken drinkt het zelfde aantal opnieuw",
