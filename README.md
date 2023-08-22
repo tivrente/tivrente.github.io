@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <title>Piccolo Drinkgame</title>
@@ -114,10 +113,13 @@
 
     <script>
         // Definieer de kaarten in een willekeurige volgorde
-        const cards = [ 
-        "Drink het aantal slokken van het maandnummer waarin je bent geboren",
-        "wat was je laatste aanraking met politie, xxx begint",
-        "wie in deze groep heeft het meeste relaties gehad",
+        const cards = [
+            "xxx takes a sip!",
+            "xxx Pick zzz someone to take yyy sips.",
+            "xxx Take two sips.",
+            "Waterfall! Everyone keeps drinking until the person to their right stops. xxx starts",
+            "Rhyme time! xxx Say a word, and everyone has to say a word that rhymes.",
+            // Voeg meer kaarten toe hier
         ];
 
         // Schud de kaarten in een willekeurige volgorde
