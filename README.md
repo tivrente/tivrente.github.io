@@ -112,6 +112,11 @@
     </div>
 
     <script>
+    let isPageVisible = true;
+    document.addEventListener("visibilitychange", function() {
+        isPageVisible = !document.hidden;
+    });
+
         // Definieer de kaarten in een willekeurige volgorde
         const cards = [
             // ... (existing cards) ...
