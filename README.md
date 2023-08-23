@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <title>Piccolo Drinkgame</title>
@@ -113,6 +112,7 @@
     </div>
 
     <script>
+
     let isPageVisible = true;
     document.addEventListener("visibilitychange", function() {
         isPageVisible = !document.hidden;
@@ -120,7 +120,14 @@
 
         // Definieer de kaarten in een willekeurige volgorde
         const cards = [
-                        // ... (existing cards) ...
+            // ... (existing cards) ...
+        "Drink het aantal slokken van het maandnummer waarin je bent geboren",
+        "wat was je laatste aanraking met politie, xxx begint",
+        "wie in deze groep heeft het meeste relaties gehad",
+        "we tellen af en wijzen een random persoon aan, de persoon met het meeste stemmen drinkt zzz slokken.",
+        "123 kijk zo nie, als je in iemand zijn ogen kijkt drink yyy slokken",
+        "Iedereen 3 slokken",
+        // ... (add more cards here) ...
         "Drink het aantal slokken van het maandnummer waarin je bent geboren",
         "wat was je laatste aanraking met politie, xxx begint",
         "wie in deze groep heeft het meeste relaties gehad",
@@ -162,7 +169,6 @@
         "elke keer als xxx lacht moet deze persoon een slok nemen",
         "niet meer naar wc, als straf krijg je een neckslap",
         "de persoon die over xxx zit moet yyy slokken drinken",
-        "xxx hoeveel drankjes heb je deze nacht al gehad = slokken die je mag uitdelen",
         "iedereen heeft een geweer met 3 kogels, je kan iemand een slok laten drinken door naar hem te schieten en PANG te zeggen.",
         "xxx heeft een uno reverse kaart (fluisteren in zijn oor)",
         "xxx kiest een categorie, eerste die afvalt 8 slokken en elke keer 1 minder",
@@ -262,20 +268,6 @@
             }
         }
 
-        // Voeg de functie voor het willekeurig selecteren van een naam toe
-        function getRandomPlayerName(playersArray) {
-            let randomName = getRandomElement(playersArray);
-            while (randomName === xxx) {
-                randomName = getRandomElement(playersArray);
-            }
-            return randomName;
-        }
-
-        // Voeg de functie voor het willekeurig selecteren van een element uit een array toe
-        function getRandomElement(array) {
-            return array[Math.floor(Math.random() * array.length)];
-        }
-
         // Roep de functie aan om de kaarten te schudden
         shuffleCards(cards);
 
@@ -305,23 +297,15 @@
                 if (cardIndex >= cards.length) {
                     cardIndex = 0;
                 }
-                const randomPlayer = getRandomPlayerName(players);
-                const currentPlayer = players[cardIndex % players.length]; // De speler die aan de beurt is
-                const randomSips = Math.floor(Math.random() * 3) + 2; // Willekeurig getal tussen 2 en 4
-                const formattedCard = getRandomCard(cards[cardIndex], currentPlayer, randomPlayer, randomSips);
+                const randomPlayer = players[Math.floor(Math.random() * players.length)];
+                const formattedCard = getRandomCard(cards[cardIndex], randomPlayer);
                 drinkInstruction.innerHTML = formattedCard;
                 drinkInstruction.style.backgroundColor = getRandomColor();
                 cardIndex++;
                 setTimeout(() => {
                     isShowingCard = false;
-                }, 300); // Voeg eventueel een kortere of langere tijd toe voor de overgang
+                }, 500); // Voeg eventueel een kortere of langere tijd toe voor de overgang
             }
-        }
-
-
- function getRandomCard(cardText, currentPlayer, randomPlayer, randomSips) {
-            return cardText.replace("xxx", currentPlayer).replace("yyy", randomSips).replace("zzz", randomPlayer);
-        }
         }
 
         function getRandomColor() {
@@ -345,61 +329,62 @@
         function startGame() {
             if (players.length > 0) {
                 document.getElementById("nameInput").style.display = "none";
-                document.getElementById("gamePage").style.display = "block";
-                toggleFullScreen();
-                updateEnteredPlayers();
+                gamePage.style.display = "block";
+                showNextCard(); // Toon de eerste kaart
             }
         }
-        addPlayerButton.addEventListener("click", addPlayer);
-        startGameButton.addEventListener("click", startGame);
-
-        function addPlayer() {
-            const playerName = playerNameInput.value;
-            if (playerName && !players.includes(playerName)) {
-                players.push(playerName);
-                playerNameInput.value = "";
-                updateEnteredPlayers();
-            }
-        }
-
-        function startGame() {
-            if (players.length > 0) {
-                document.getElementById("nameInput").style.display = "none";
-                document.getElementById("gamePage").style.display = "block";
-                toggleFullScreen();
-                updateEnteredPlayers();
-            }
-        }
-
 
         function updateEnteredPlayers() {
             enteredPlayers.innerHTML = players.map(player => `<div class="playerName">${player}</div>`).join("");
         }
 
-        function getRandomCard(cardText, yyy, playerName) {
-            return cardText.replace("yyy", playerName);
-        }
-
-        // Voeg de functie voor het schakelen tussen volledig scherm toe
         function toggleFullScreen() {
+            const element = document.documentElement;
             if (!document.fullscreenElement) {
-                gamePage.requestFullscreen().catch(err => {
-                    console.log(`Error attempting to enable full-screen mode: ${err.message}`);
-                });
+                if (element.requestFullscreen) {
+                    element.requestFullscreen();
+                } else if (element.webkitRequestFullscreen) { // Voor Apple
+                    element.webkitRequestFullscreen();
+                }
             } else {
                 if (document.exitFullscreen) {
                     document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { // Voor Apple
+                    document.webkitExitFullscreen();
                 }
             }
         }
 
-        // Voeg de knop toe om terug te gaan naar de kaartenlijst
-        const backButton = document.getElementById("backButton");
-        backButton.addEventListener("click", () => {
-            drinkInstruction.classList.remove("fullscreen");
-            backButton.style.display = "none";
-            showNextCard();
+        // Voeg een eventlistener toe om de "Back" knop te tonen bij het bekijken van de kaarten
+        drinkInstruction.addEventListener("click", function() {
+            document.getElementById("backButton").style.display = "block";
         });
+
+        // Voeg een eventlistener toe aan de "Back" knop om terug te gaan naar het invoerscherm
+        document.getElementById("backButton").addEventListener("click", function() {
+            document.getElementById("gamePage").style.display = "none";
+            document.getElementById("nameInput").style.display = "block";
+            document.getElementById("backButton").style.display = "none";
+        });
+        
+        // Voeg een eventlistener toe voor het draaien van de gsm
+        window.addEventListener("orientationchange", function() {
+            if (document.fullscreenElement) {
+                // Vernieuw de full-screen modus om de tekst op het scherm te houden na draaien
+                document.exitFullscreen().then(function() {
+                    toggleFullScreen();
+                });
+            }
+        });
+
+        function getRandomCard(cardText, playerName) {
+            const yyy = Math.floor(Math.random() * 3) + 2; // Willekeurig getal tussen 2 en 4
+            const zzz = Math.floor(Math.random() * 4) + 5; // Willekeurig getal tussen 5 en 8
+            return cardText
+                .replace(/xxx/g, playerName)
+                .replace(/yyy/g, yyy)
+                .replace(/zzz/g, zzz);
+        }
     </script>
 </body>
 </html>
