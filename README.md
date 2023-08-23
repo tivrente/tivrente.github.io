@@ -306,7 +306,9 @@
                     cardIndex = 0;
                 }
                 const randomPlayer = getRandomPlayerName(players);
-                const formattedCard = getRandomCard(cards[cardIndex], xxx, randomPlayer);
+                const currentPlayer = players[cardIndex % players.length]; // De speler die aan de beurt is
+                const randomSips = Math.floor(Math.random() * 3) + 2; // Willekeurig getal tussen 2 en 4
+                const formattedCard = getRandomCard(cards[cardIndex], currentPlayer, randomPlayer, randomSips);
                 drinkInstruction.innerHTML = formattedCard;
                 drinkInstruction.style.backgroundColor = getRandomColor();
                 cardIndex++;
@@ -314,6 +316,10 @@
                     isShowingCard = false;
                 }, 500); // Voeg eventueel een kortere of langere tijd toe voor de overgang
             }
+        }
+
+        function getRandomCard(cardText, currentPlayer, randomPlayer, randomSips) {
+            return cardText.replace("xxx", currentPlayer).replace("yyy", randomSips).replace("zzz", randomPlayer);
         }
 
         function getRandomColor() {
