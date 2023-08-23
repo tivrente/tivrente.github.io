@@ -318,8 +318,9 @@
             }
         }
 
-        function getRandomCard(cardText, currentPlayer, randomPlayer, randomSips) {
-            return cardText.replace("xxx", currentPlayer).replace("yyy", randomSips).replace("zzz", randomPlayer);
+        function getRandomCard(cardText, playerName) {
+            return cardText.replace("yyy", playerName);
+        }
         }
 
         function getRandomColor() {
