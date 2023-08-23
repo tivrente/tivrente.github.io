@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Piccolo Drinkgame</title>
@@ -112,7 +113,6 @@
     </div>
 
     <script>
-
     let isPageVisible = true;
     document.addEventListener("visibilitychange", function() {
         isPageVisible = !document.hidden;
@@ -120,7 +120,7 @@
 
         // Definieer de kaarten in een willekeurige volgorde
         const cards = [
-            // ... (existing cards) ...
+                        // ... (existing cards) ...
         "Drink het aantal slokken van het maandnummer waarin je bent geboren",
         "wat was je laatste aanraking met politie, xxx begint",
         "wie in deze groep heeft het meeste relaties gehad",
@@ -268,6 +268,20 @@
             }
         }
 
+        // Voeg de functie voor het willekeurig selecteren van een naam toe
+        function getRandomPlayerName(playersArray) {
+            let randomName = getRandomElement(playersArray);
+            while (randomName === xxx) {
+                randomName = getRandomElement(playersArray);
+            }
+            return randomName;
+        }
+
+        // Voeg de functie voor het willekeurig selecteren van een element uit een array toe
+        function getRandomElement(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
         // Roep de functie aan om de kaarten te schudden
         shuffleCards(cards);
 
@@ -298,15 +312,13 @@
                     cardIndex = 0;
                 }
                 const randomPlayer = getRandomPlayerName(players);
-        const formattedCard = getRandomCard(cards[cardIndex], xxx, randomPlayer);
-        drinkInstruction.innerHTML = formattedCard;
-        drinkInstruction.style.backgroundColor = getRandomColor();
-        cardIndex++;
-        setTimeout(() => {
-            isShowingCard = false;
-        }, 300); // Voeg eventueel een kortere of langere tijd toe voor de overgang
-    }
-}
+                const formattedCard = getRandomCard(cards[cardIndex], xxx, randomPlayer);
+                drinkInstruction.innerHTML = formattedCard;
+                drinkInstruction.style.backgroundColor = getRandomColor();
+                cardIndex++;
+                setTimeout(() => {
+                    isShowingCard = false;
+                }, 500); // Voeg eventueel een kortere of langere tijd toe voor de overgang
             }
         }
 
@@ -318,16 +330,6 @@
             }
             return color;
         }
-function getRandomPlayerName(playersArray) {
-    let randomName = getRandomElement(playersArray);
-    while (randomName === xxx) {
-        randomName = getRandomElement(playersArray);
-    }
-    return randomName;
-}
-function getRandomElement(array) {
-    return array[Math.floor(Math.random() * array.length)];
-}
 
         function addPlayer() {
             const playerName = playerNameInput.value;
@@ -341,8 +343,9 @@ function getRandomElement(array) {
         function startGame() {
             if (players.length > 0) {
                 document.getElementById("nameInput").style.display = "none";
-                gamePage.style.display = "block";
-                showNextCard(); // Toon de eerste kaart
+                document.getElementById("gamePage").style.display = "block";
+                toggleFullScreen();
+                updateEnteredPlayers();
             }
         }
 
@@ -350,53 +353,30 @@ function getRandomElement(array) {
             enteredPlayers.innerHTML = players.map(player => `<div class="playerName">${player}</div>`).join("");
         }
 
+        function getRandomCard(cardText, yyy, playerName) {
+            return cardText.replace("yyy", playerName);
+        }
+
+        // Voeg de functie voor het schakelen tussen volledig scherm toe
         function toggleFullScreen() {
-            const element = document.documentElement;
             if (!document.fullscreenElement) {
-                if (element.requestFullscreen) {
-                    element.requestFullscreen();
-                } else if (element.webkitRequestFullscreen) { // Voor Apple
-                    element.webkitRequestFullscreen();
-                }
+                gamePage.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable full-screen mode: ${err.message}`);
+                });
             } else {
                 if (document.exitFullscreen) {
                     document.exitFullscreen();
-                } else if (document.webkitExitFullscreen) { // Voor Apple
-                    document.webkitExitFullscreen();
                 }
             }
         }
 
-        // Voeg een eventlistener toe om de "Back" knop te tonen bij het bekijken van de kaarten
-        drinkInstruction.addEventListener("click", function() {
-            document.getElementById("backButton").style.display = "block";
+        // Voeg de knop toe om terug te gaan naar de kaartenlijst
+        const backButton = document.getElementById("backButton");
+        backButton.addEventListener("click", () => {
+            drinkInstruction.classList.remove("fullscreen");
+            backButton.style.display = "none";
+            showNextCard();
         });
-
-        // Voeg een eventlistener toe aan de "Back" knop om terug te gaan naar het invoerscherm
-        document.getElementById("backButton").addEventListener("click", function() {
-            document.getElementById("gamePage").style.display = "none";
-            document.getElementById("nameInput").style.display = "block";
-            document.getElementById("backButton").style.display = "none";
-        });
-        
-        // Voeg een eventlistener toe voor het draaien van de gsm
-        window.addEventListener("orientationchange", function() {
-            if (document.fullscreenElement) {
-                // Vernieuw de full-screen modus om de tekst op het scherm te houden na draaien
-                document.exitFullscreen().then(function() {
-                    toggleFullScreen();
-                });
-            }
-        });
-
-        function getRandomCard(cardText, playerName) {
-            const yyy = Math.floor(Math.random() * 3) + 2; // Willekeurig getal tussen 2 en 4
-            const zzz = Math.floor(Math.random() * 4) + 5; // Willekeurig getal tussen 5 en 8
-            return cardText
-                .replace(/xxx/g, playerName)
-                .replace(/yyy/g, yyy)
-                .replace(/zzz/g, zzz);
-        }
     </script>
 </body>
 </html>
