@@ -151,7 +151,7 @@
         "Laatste die naar de wc is gegaan drinkt yyy slokken",
         "Vingeren verliezer drinkt zzz slokken",
         "Apple/android minste stemmen drinkt yyy slokken",
-        "xxx kiest getal tussen 1 en 6, xxx mag het dubbele weggeven",
+        "xxx kiest getal tussen 1 en 6, aaa mag het dubbele weggeven",
         "xxx kiest getal tussen 1 en 6... je mag deze zelf opdrinken",
         "iedereen zeg een getal, laagste getal drinkt zijn nummer",
         "wie is de sportiefste vd groep, deze persoon drinkt zzz slokken.",
@@ -200,8 +200,8 @@
         "Kies een speler om een waarheid te vertellen of zzz slokken te nemen.",
         "xxx begint met een woord, de volgende persoon heeft 2 seconden om een woord te zeggen die hier iets mee te maken heeft. als je niet binnen de tijd kan antwoorden neem je yyy slokken",
         "iedereen mag elk om zen beurt iets zeggen over xxx, als het positief is neemt deze persoon een slok, als het negatief is neem je zelf een",
-        "wedstrijd: xxx zegt het alfabet achterstevoren, intussen at xxx zijn drinken. de verliezer at een drankje",
-        "push up battle, xxx tegen xxx. de verliezer drinkt het verschil in slokken.",
+        "wedstrijd: xxx zegt het alfabet achterstevoren, intussen at aaa zijn drinken. de verliezer at een drankje",
+        "push up battle, xxx tegen aaa. de verliezer drinkt het verschil in slokken.",
         "xxx pomp 10 keer of drink zzz",
         "neem yyy slokken als je afgelopen week sex hebt gehad",
         "neem yyy slokken als je maagd bent",
@@ -214,7 +214,7 @@
         "xxx stel een vraag, de eerste persoon die er op kan antwoorden mag yyy solkken uitdelen",
         "xxx drink yyy slokken",
         "xxx deel yyy slokken uit",
-        "xxx en xxx kies een pesoon om yyy slokken aan te geven",
+        "xxx en aaa kies een pesoon om yyy slokken aan te geven",
         "xxx drink yyy slokken",
         "xxx at je drankje",
         "drink yyy keer als je al drugs hebt gedaan ",
@@ -223,7 +223,7 @@
         "xxx als je ooit hebt gelachen met een gehandicapte persoon, shame on you, drink yyy slokken",
         "beslis wie de grootste mong is in de ruimte, deze persoon drinkt 3 slokken, en mag 3 slokken uitdelen",
         "drink yyy slokken als je denkt dat je de rest van je leven van je huidige partner gaat doorbrengen",
-        "xxx drink zoveel je wilt. xxx moet het dubbele drinken",
+        "xxx drink zoveel je wilt. aaa moet het dubbele drinken",
         "drink yyy slokken als je niet kan plassen onder druk of als er mensen bij staan",
         "xxx als de laatste keer dat je hebt geplast thuis was geef 5 slokken uit, anders drink er 5",
         "rank de top 3 harigste speler. 3e plaats drink 1 slok, 2de 2 en 1e 3.",
@@ -243,7 +243,7 @@
         "voetbal teams, de persoon dei niets weet of in herhaling valt drink 4 slokken",
         "vanaf nu als je naar het wc moet vraag je het aan de game master met een rijm, bv :ik moet dringend naar de wc, hopelijk is het geen diaree",
         "de persoon met het minste body hair drink 5 slokken",
-        "xxx en xxx at battle, de winnaar krijgt immuniteit voor 15 min",
+        "xxx en aaa at battle, de winnaar krijgt immuniteit voor 15 min",
         "als je ooit cum hebt ingeslikt dirnk 3 keer",
         "boys drink yyy keer",
         "girls drink yyy keer",
@@ -298,7 +298,7 @@
                     cardIndex = 0;
                 }
                 const randomPlayer = getRandomPlayerName(players);
-        const formattedCard = getRandomCard(cards[cardIndex], randomPlayer);
+        const formattedCard = getRandomCard(cards[cardIndex], xxx, randomPlayer);
         drinkInstruction.innerHTML = formattedCard;
         drinkInstruction.style.backgroundColor = getRandomColor();
         cardIndex++;
@@ -318,18 +318,16 @@
             }
             return color;
         }
-        function getRandomPlayerName(playersArray) {
+function getRandomPlayerName(playersArray) {
     let randomName = getRandomElement(playersArray);
     while (randomName === xxx) {
         randomName = getRandomElement(playersArray);
     }
     return randomName;
 }
-
 function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
-
 
         function addPlayer() {
             const playerName = playerNameInput.value;
@@ -402,4 +400,3 @@ function getRandomElement(array) {
     </script>
 </body>
 </html>
-
