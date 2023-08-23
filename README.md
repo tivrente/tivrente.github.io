@@ -314,12 +314,13 @@
                 cardIndex++;
                 setTimeout(() => {
                     isShowingCard = false;
-                }, 500); // Voeg eventueel een kortere of langere tijd toe voor de overgang
+                }, 300); // Voeg eventueel een kortere of langere tijd toe voor de overgang
             }
         }
 
-        function getRandomCard(cardText, playerName) {
-            return cardText.replace("yyy", playerName);
+
+ function getRandomCard(cardText, currentPlayer, randomPlayer, randomSips) {
+            return cardText.replace("xxx", currentPlayer).replace("yyy", randomSips).replace("zzz", randomPlayer);
         }
         }
 
@@ -349,6 +350,27 @@
                 updateEnteredPlayers();
             }
         }
+        addPlayerButton.addEventListener("click", addPlayer);
+        startGameButton.addEventListener("click", startGame);
+
+        function addPlayer() {
+            const playerName = playerNameInput.value;
+            if (playerName && !players.includes(playerName)) {
+                players.push(playerName);
+                playerNameInput.value = "";
+                updateEnteredPlayers();
+            }
+        }
+
+        function startGame() {
+            if (players.length > 0) {
+                document.getElementById("nameInput").style.display = "none";
+                document.getElementById("gamePage").style.display = "block";
+                toggleFullScreen();
+                updateEnteredPlayers();
+            }
+        }
+
 
         function updateEnteredPlayers() {
             enteredPlayers.innerHTML = players.map(player => `<div class="playerName">${player}</div>`).join("");
