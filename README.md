@@ -297,14 +297,16 @@
                 if (cardIndex >= cards.length) {
                     cardIndex = 0;
                 }
-                const randomPlayer = players[Math.floor(Math.random() * players.length)];
-                const formattedCard = getRandomCard(cards[cardIndex], randomPlayer);
-                drinkInstruction.innerHTML = formattedCard;
-                drinkInstruction.style.backgroundColor = getRandomColor();
-                cardIndex++;
-                setTimeout(() => {
-                    isShowingCard = false;
-                }, 500); // Voeg eventueel een kortere of langere tijd toe voor de overgang
+                const randomPlayer = getRandomPlayerName(players);
+        const formattedCard = getRandomCard(cards[cardIndex], randomPlayer);
+        drinkInstruction.innerHTML = formattedCard;
+        drinkInstruction.style.backgroundColor = getRandomColor();
+        cardIndex++;
+        setTimeout(() => {
+            isShowingCard = false;
+        }, 300); // Voeg eventueel een kortere of langere tijd toe voor de overgang
+    }
+}
             }
         }
 
@@ -316,6 +318,18 @@
             }
             return color;
         }
+        function getRandomPlayerName(playersArray) {
+    let randomName = getRandomElement(playersArray);
+    while (randomName === xxx) {
+        randomName = getRandomElement(playersArray);
+    }
+    return randomName;
+}
+
+function getRandomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
 
         function addPlayer() {
             const playerName = playerNameInput.value;
