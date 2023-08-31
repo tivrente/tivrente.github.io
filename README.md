@@ -304,7 +304,7 @@
                 cardIndex++;
                 setTimeout(() => {
                     isShowingCard = false;
-                }, 500); // Voeg eventueel een kortere of langere tijd toe voor de overgang
+                }, 100); // Voeg eventueel een kortere of langere tijd toe voor de overgang
             }
         }
 
@@ -376,15 +376,26 @@
                 });
             }
         });
-
-        function getRandomCard(cardText, playerName) {
-            const yyy = Math.floor(Math.random() * 3) + 2; // Willekeurig getal tussen 2 en 4
-            const zzz = Math.floor(Math.random() * 4) + 5; // Willekeurig getal tussen 5 en 8
-            return cardText
-                .replace(/xxx/g, playerName)
-                .replace(/yyy/g, yyy)
-                .replace(/zzz/g, zzz);
+function getRandomPlayerExcept(player) {
+            const availablePlayers = players.filter(p => p !== player);
+            if (availablePlayers.length > 0) {
+                const randomIndex = Math.floor(Math.random() * availablePlayers.length);
+                return availablePlayers[randomIndex];
+            }
+            return "Andere Speler"; // Vervang dit met een standaardnaam als er geen andere spelers zijn
         }
+
+
+function getRandomCard(cardText, playerName) {
+    const yyy = Math.floor(Math.random() * 3) + 2; // Random number between 2 and 4
+    const zzz = Math.floor(Math.random() * 4) + 5; // Random number between 5 and 8
+    return cardText
+        .replace(/xxx/g, playerName)
+        .replace(/yyy/g, yyy)
+        .replace(/aaa/g, getRandomPlayerExcept(playerName)) // Fix this line
+        .replace(/zzz/g, zzz);
+}
     </script>
 </body>
 </html>
+
