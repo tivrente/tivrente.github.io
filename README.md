@@ -54,7 +54,7 @@
         #drinkInstruction {
             font-size: 24px;
             margin-top: 20px;
-            padding: 40px; /* Grotere padding voor afstand tot de rand */
+            padding: 60px; /* Grotere padding voor afstand tot de rand */
             transition: background-color 0.3s;
             text-align: center;
             display: flex;
@@ -398,4 +398,3 @@ function getRandomCard(cardText, playerName) {
     </script>
 </body>
 </html>
-
