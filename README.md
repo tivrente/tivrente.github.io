@@ -303,7 +303,7 @@
 "xxx doe pushups tot je niet meer kan je mag je aantal delen door 5 en uitdelen",
 "stemmen kont of tetten",
 "Wilt u liever weten wanneer u overlijdt of wanneer de persoon van wie u houdt, sterft?",
-"Zou je liever de mogelijkheid hebben om stapvoets te vliegen of te rennen met 160 km / u",
+"Zou je liever de mogelijkheid hebben om stapvoets te vliegen of te rennen met 160 km / u"
 
         ];
 
