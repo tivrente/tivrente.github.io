@@ -295,12 +295,18 @@
         "iedreen die een muziekinstrument speel deel yyy slokken uit",
         "als je al eens wiet hebt geroken drink yyy slokken",
         "als je ooit pokemon hebt gespeeld drink yyy slokken",
-
         "iedereen zegt zijn favoriete teletubie, de populairste teletubbies mogen yyy slokken drinken",
         "als je al naar afrika bent gewesst drink yyy slokken",
         "als je van een klif hebt gesprongen drink yyy slokken",
         "als je eens een bodyshot hebt gedaan deel yyy slokken uit",
         "als je per ambulance naar het ziekenhuis bent gebracht drink yyy slokken",
+
+        "als je eens bloed hebt gedoneerd deel yyy slokken uit",
+        "wie heeft er ooit een doodsevravring gehad, de beste deelt zzz slokken uit",
+        "als je al eens ik hou van je zonder dat je het meende hebt gezegd drink yyy slokken",
+        "als je eens met een voormalig lief van een vriend bent samengeweest drink yyy slokken"
+        "als je eens fortnite hebt gespeeld, deel yyy slokken uit",
+        "als je eens spin the bottle hebt gedaan, drink yyy slokken",
 
 
 
