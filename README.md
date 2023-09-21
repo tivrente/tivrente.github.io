@@ -304,9 +304,7 @@
         "als je eens bloed hebt gedoneerd deel yyy slokken uit",
         "wie heeft er ooit een doodsevravring gehad, de beste deelt zzz slokken uit",
         "als je al eens ik hou van je zonder dat je het meende hebt gezegd drink yyy slokken",
-        "als je eens met een voormalig lief van een vriend bent samengeweest drink yyy slokken"
-        "als je eens fortnite hebt gespeeld, deel yyy slokken uit",
-        "als je eens spin the bottle hebt gedaan, drink yyy slokken",
+
 
 
 
