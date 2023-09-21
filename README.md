@@ -287,6 +287,15 @@
         "ooit een onenightstand gehad? deel yyy slokken uit",
         "ooit een lap dance gegeven of gekregen? drink yyy slokken",
 
+        "xxx drink yyy keer",
+        "xxx en aaa drink samen zzz keer",
+        "xxx geef yyy slokken uit ",
+        "xxx geef zzz slokken uit",
+        "hebben je ouders je geraagd als je nog maagd bent? drink dan yyy slokken",
+        "iedreen die een muziekinstrument speel deel yyy slokken uit",
+        "als je al eens wiet hebt geroken drink yyy slokken",
+        "als je ooit pokemon hebt gespeeld drink yyy slokken",
+
 
         ];
 
