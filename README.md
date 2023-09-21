@@ -292,19 +292,6 @@
         "als je eens met een voormalig lief van een vriend bent samengeweest drink yyy slokken"
         "als je eens fortnite hebt gespeeld, deel yyy slokken uit",
         "als je eens spin the bottle hebt gedaan, drink yyy slokken",
-        "als je ooit urine hebt gedronken, deel yyy slokken uit",
-        "xxx ben je ooit naakt in het openbaar geweest",
-        "xxx heb je ooit buiten sex gehad, als je niet wilt andwoorden drink 5 slokken",
-        "xxx ben je dominant of onderdanig in bed",
-        "xxx ben je ooit zo high of dronken geweest dat je met objecten sprak",
-        "xxx heb je ooit sex gehad met meerdere mensen binnen de 48 uur",
-        "xxx heb je ooit een trio gehad, als je niet wilt andwoorden drink 5 slokken",
-        "xxx wat is het meest verassende dat je ooit heeft opgewonden",
-        "xxx doe pushups tot je niet meer kan je mag je aantal delen door 5 en uitdelen",
-        "stemmen kont of tetten",
-        "Wilt u liever weten wanneer u overlijdt of wanneer de persoon van wie u houdt, sterft?",
-        "Zou je liever de mogelijkheid hebben om stapvoets te vliegen of te rennen met 160 km / u",
-
         ];
 
         // Schud de kaarten in een willekeurige volgorde
