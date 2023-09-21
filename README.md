@@ -296,6 +296,13 @@
         "als je al eens wiet hebt geroken drink yyy slokken",
         "als je ooit pokemon hebt gespeeld drink yyy slokken",
 
+        "iedereen zegt zijn favoriete teletubie, de populairste teletubbies mogen yyy slokken drinken",
+        "als je al naar afrika bent gewesst drink yyy slokken",
+        "als je van een klif hebt gesprongen drink yyy slokken",
+        "als je eens een bodyshot hebt gedaan deel yyy slokken uit",
+        "als je per ambulance naar het ziekenhuis bent gebracht drink yyy slokken",
+
+
 
         ];
 
