@@ -259,6 +259,7 @@
         "elke keer als xxx lacht moet deze persoon een slok nemen",
         "niet meer naar wc, als straf krijg je een neckslap",
         "als je ooit urine hebt gedronken, deel yyy slokken uit",
+        
         "xxx ben je ooit naakt in het openbaar geweest",
         "xxx heb je ooit buiten sex gehad, als je niet wilt andwoorden drink 5 slokken",
         "xxx ben je dominant of onderdanig in bed",
@@ -270,6 +271,22 @@
         "stemmen kont of tetten",
         "Wilt u liever weten wanneer u overlijdt of wanneer de persoon van wie u houdt, sterft?",
         "Zou je liever de mogelijkheid hebben om stapvoets te vliegen of te rennen met 160 km / u",
+                "xxx wat is het laatste land waar je op reis bent geweest, iedereen die hier al is geweest drinkt yyy slokken",
+        "iedereen die al heeft geskinnydipt drink yyy slokken",
+        "als je hebt overgegeven op een vriend of iemand anders drink yyy slokken",
+        "never have i ever gelogen in dit spel",
+        "sex gehad in openbaar? deel 4 slokken uit",
+        "verkeerde naam gezegd tijdens de seks? deel 4 slokken uit",
+        "seks gehad met iemand waarvan ik de naam niet meer weet? drink yyy slokken",
+        "heb je ooit een fuckbuddy gehad? drink yyy slokken",
+        "ooit seks gehad met iemand waarvan ik de naam niet meer weet? drink yyy slokken",
+        "ooit naar een seksshop geweest? deel yyy slokken uit",
+        "ooit een trio gehad? deel yyy slokken uit",
+        "ooit seks gehad in een vliegtuig? deel yyy slokken uit",
+        "ooit seks gehad in het zwembad/de zee? drink yyy slokken uit",
+        "ooit een onenightstand gehad? deel yyy slokken uit",
+        "ooit een lap dance gegeven of gekregen? drink yyy slokken",
+
 
         ];
 
